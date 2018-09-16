@@ -1,0 +1,46 @@
+package com.example.restapi.auto;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import com.example.restapi.basemodel.BaseModel;
+
+@Entity
+public class Auto extends BaseModel {
+
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
+	private long id;
+	
+	private String bezeichnung;
+	
+	public Auto() {
+		
+	}
+	
+	public Auto(String bezeichnung) {
+		this.bezeichnung = bezeichnung;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getBezeichnung() {
+		return bezeichnung;
+	}
+
+	public void setBezeichnung(String bezeichnung) {
+		this.bezeichnung = bezeichnung;
+	}
+}

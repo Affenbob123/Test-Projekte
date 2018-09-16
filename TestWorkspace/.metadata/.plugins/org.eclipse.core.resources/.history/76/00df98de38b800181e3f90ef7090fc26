@@ -1,0 +1,38 @@
+package com.example.restapi.auto;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController<T> {
+
+	@Autowired
+	AutoRepository repository;
+	
+	@GetMapping("/autos")
+	public List<T> getListe() {
+		return repository.findAll();
+	}
+	
+	@GetMapping("/auto/{autoId}")
+	public Auto getAuto(@PathVariable("autoId") Long autoId) {
+		return repository.findById(autoId).orElse(null);
+	}
+	
+	@PostMapping("/auto/neu")
+	public Auto newAuto(@RequestBody Auto auto) {
+		return repository.save(auto);
+	}
+	
+	@DeleteMapping("/auto/{autoId}")
+	public void deleteAuto(@PathVariable("autoId") Long autoId) {
+		repository.deleteById(autoId);
+	}
+}

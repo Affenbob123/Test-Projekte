@@ -1,0 +1,37 @@
+package com.example.restapi;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.example.restapi.auto.Auto;
+import com.example.restapi.auto.AutoRepository;
+import com.example.restapi.fahrrad.FahrradRepository;
+
+@Configuration
+public class RestapiConfiguration {
+
+	private static final Logger LOG = LoggerFactory.getLogger(RestapiConfiguration.class);
+	
+	@Bean
+	CommandLineRunner initDatabaseAuto(AutoRepository autoRepository) {
+		return args -> {
+			LOG.info("Preloading " + autoRepository.save(new Auto("Auto 1")));
+			LOG.info("Preloading " + autoRepository.save(new Auto("Auto 2")));
+			LOG.info("Preloading " + autoRepository.save(new Auto("Auto 3")));
+			LOG.info("Preloading " + autoRepository.save(new Auto("Auto 4")));
+		};
+	}
+	
+	@Bean
+	CommandLineRunner initDatabaseFahrrad(FahrradRepository fahrradRepository) {
+		return args -> {
+			LOG.info("Preloading " + fahrradRepository.save(new Fahrrad("Fahrrad 1")));
+			LOG.info("Preloading " + fahrradRepository.save(new Fahrrad("Fahrrad 2")));
+			LOG.info("Preloading " + fahrradRepository.save(new Fahrrad("Fahrrad 3")));
+			LOG.info("Preloading " + fahrradRepository.save(new Fahrrad("Fahrrad 4")));
+		};
+	}
+}

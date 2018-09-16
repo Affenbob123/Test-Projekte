@@ -1,0 +1,12 @@
+package com.example.restapi.auto;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.restapi.basemodel.GenericRestController;
+import com.ferdisonmezay.tutorials.genericrestapi.model.Grant;
+
+@RestController
+@RequestMapping("/auto")
+public class GrantController extends GenericRestController<Auto> {
+
+}

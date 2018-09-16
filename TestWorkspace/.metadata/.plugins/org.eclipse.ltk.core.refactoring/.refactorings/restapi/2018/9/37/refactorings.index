@@ -1,0 +1,15 @@
+1536934015405	Rename package 'com.example.restapi.car'
+1536934023238	Rename type 'Car'
+1536934043270	Rename type 'CarController'
+1536934052207	Rename type 'CarRepository'
+1536941141867	Rename type 'AutoController'
+1536941281738	Rename field 'autoRepository'
+1536941502739	Rename type 'TestController'
+1536942213468	Move compilation unit
+1536942814426	Rename type 'TestController'
+1536944744137	Delete element
+1536996110676	Move compilation unit
+1536996113473	Move compilation unit
+1536996784962	Delete element
+1537082146446	Rename type 'HomeController'
+1537082185501	Delete element

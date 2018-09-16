@@ -1,0 +1,17 @@
+<div>
+  <button (click)="erstelleNeuesFahrrad()">Neues Fahrrad</button>
+</div>
+<div>
+  <table>
+    <tr *ngFor="let fahrrad of fahrraeder">
+      <td>{{ fahrrad.id }}</td>
+      <td>
+        <a href="/">{{fahrrad.bezeichnung}}</a>
+      </td>
+      <td></td>
+      <td>
+        <button (click)="loescheFahrrad(fahrrad.id)">Löschen</button>
+      </td>
+    </tr>
+  </table>
+</div>

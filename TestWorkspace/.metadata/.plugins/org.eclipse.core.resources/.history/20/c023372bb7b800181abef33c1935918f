@@ -1,0 +1,10 @@
+package com.example.restapi.fahrrad;
+
+import javax.persistence.Entity;
+
+import com.example.restapi.basemodel.BaseModel;
+
+@Entity
+public class Fahrrad extends BaseModel{
+
+}

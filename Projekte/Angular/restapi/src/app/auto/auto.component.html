@@ -1,0 +1,15 @@
+<div>
+  <button (click)="erstelleNeuesAuto()">Neues Auto</button>
+</div>
+<table class="">
+  <tr *ngFor="let auto of autos">
+    <td>{{auto.id}}</td>
+    <td>
+      <a href="/">{{auto.bezeichnung}}</a>
+    </td>
+    <td></td>
+    <td>
+      <button (click)="loescheAuto(auto.id)">Löschen</button>
+    </td>
+  </tr>
+</table>

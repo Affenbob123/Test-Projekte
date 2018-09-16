@@ -1,0 +1,13 @@
+package com.example.restapi.auto;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.restapi.basemodel.GenericRestController;
+
+@RestController
+@RequestMapping("/autos")
+@CrossOrigin
+public class AutoController extends GenericRestController<Auto> {
+
+}
